@@ -13,3 +13,10 @@ body {
     background-repeat: no-repeat;
     background-position-x: center;
 }
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

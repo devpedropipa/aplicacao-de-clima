@@ -1,4 +1,5 @@
 import iconePrevisao from "../assets/icone-nuvem.png"
+import "../styles/previsao-tempo.css"
 
 export function PrevisaoTempo() {
     return (

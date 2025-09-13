@@ -1,0 +1,25 @@
+div#barra-pesquisa {
+    display: grid;
+    justify-content: center;
+}
+
+form#container-pesquisa {
+    display: flex;
+}
+
+form#container-pesquisa > div, form#container-pesquisa > label {
+    display: flex;
+}
+
+input#caixa-pesquisa {
+    border: 1px solid whitesmoke;
+    outline: none;
+    background: none;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+
+img#icone-pesquisa {
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+}
