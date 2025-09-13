@@ -1,15 +1,15 @@
-import iconeUmidade from "../assets/icone-umidade.png"
 import "../styles/info-add.css"
 
 interface infoAddProps {
     numeroInfoAddClima: string;
     nomeInfoAddClima: string;
+    iconeInfoAddClima: string;
 }
 
-export function InfoAdicional({numeroInfoAddClima, nomeInfoAddClima}: infoAddProps) {
+export function InfoAdicional({numeroInfoAddClima, nomeInfoAddClima, iconeInfoAddClima}: infoAddProps) {
     return (
         <div className="info-add">
-            <img src={iconeUmidade} alt="informação adicional" className="icone-info-add" />
+            <img src={iconeInfoAddClima} alt="informação adicional" className="icone-info-add" draggable="false" />
             <div className="dados-info-add">
                 <p className="numero-info-add">{numeroInfoAddClima}</p>
                 <p className="nome-info-add">{nomeInfoAddClima}</p>

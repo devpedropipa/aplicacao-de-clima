@@ -10,8 +10,12 @@ img#icone-previsao {
 
 h1#temperatura {
     font-size: 60px;
+    font-weight: 600;
+    transform: scaleY(1.4);
+    letter-spacing: 4px;
 }
 
 h2#local {
+    font-weight: 500;
     font-size: 32px;
 }

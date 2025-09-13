@@ -11,6 +11,7 @@ export function BarraPesquisa() {
                         src={iconeLocal}
                         alt="ícone de localização"
                         id="icone-local"
+                        draggable="false"
                     />
                     <input type="search" />
                 </div>
@@ -22,6 +23,7 @@ export function BarraPesquisa() {
                         src={iconePesquisa}
                         alt="icone de pesquisa"
                         id="icone-pesquisa"
+                        draggable="false"
                     />
                 </label>
             </form>

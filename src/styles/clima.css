@@ -1,7 +1,7 @@
 div#clima {
     padding: 1em;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     border: 1px solid whitesmoke;
     border-radius: 10px;
     width: 32em;

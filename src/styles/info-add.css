@@ -11,6 +11,7 @@ div.info-add {
 img.icone-info-add {
     margin-left: 8px;
     width: 50px;
+    height: 50px;
 }
 
 div.dados-info-add {
@@ -20,5 +21,11 @@ div.dados-info-add {
 }
 
 p.numero-info-add {
-    font-size: 21px;
+    transform: scaleY(1.4);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+p.nome-info-add {
+    font-weight: 300;
 }
