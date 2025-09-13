@@ -1,16 +1,24 @@
 div.info-add {
     display: flex;
+    margin: 8px;
     align-items: center;
     border: 1px solid whitesmoke;
     border-radius: 10px;
     color: whitesmoke;
-    width: fit-content;
+    width: 200px;
 }
 
 img.icone-info-add {
-    width: 40px;
+    margin-left: 8px;
+    width: 50px;
 }
 
 div.dados-info-add {
+    width: 100%;
+    margin: 8px;
     text-align: center;
+}
+
+p.numero-info-add {
+    font-size: 21px;
 }

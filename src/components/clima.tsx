@@ -9,10 +9,10 @@ export function Clima() {
             <BarraPesquisa />
             <PrevisaoTempo />
             <aside id="container-info-add">
-                <InfoAdicional />
-                <InfoAdicional />
-                <InfoAdicional />
-                <InfoAdicional />
+                <InfoAdicional numeroInfoAddClima="12°C" nomeInfoAddClima="Temp. mínima" />
+                <InfoAdicional numeroInfoAddClima="13°C" nomeInfoAddClima="Temp. máxima" />
+                <InfoAdicional numeroInfoAddClima="30%" nomeInfoAddClima="Umidade" />
+                <InfoAdicional numeroInfoAddClima="2.4km/h" nomeInfoAddClima="Vento" />
             </aside>
         </div>
     )
