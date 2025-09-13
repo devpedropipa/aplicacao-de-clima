@@ -4,17 +4,17 @@ import "../styles/barra-pesquisa.css";
 
 export function BarraPesquisa() {
     return (
-        <div id="barra-pesquisa">
-            <form id="container-pesquisa">
-                <div>
+        <div id="container-pesquisa">
+            <form id="barra-pesquisa">
+                <div id="caixa-pesquisa">
                     <img
                         src={iconeLocal}
                         alt="ícone de localização"
                         id="icone-local"
                     />
-                    <input type="search" id="caixa-pesquisa" />
+                    <input type="search" />
                 </div>
-                <label>
+                <label id="botao-pesquisar">
                     {/* Não estiliza este input submit */}
                     <input type="submit" hidden />
 

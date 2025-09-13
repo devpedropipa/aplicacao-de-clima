@@ -1,25 +1,45 @@
-div#barra-pesquisa {
+div#container-pesquisa {
     display: grid;
+}
+
+form#barra-pesquisa {
+    display: flex;
     justify-content: center;
 }
 
-form#container-pesquisa {
+div#caixa-pesquisa {
+    display: flex;
+    position: relative;
+    width: 70%; /* Altera a largura da caixa */
+}
+
+img#icone-local {
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    width: 28px;
+}
+
+label#botao-pesquisar {
     display: flex;
 }
 
-form#container-pesquisa > div, form#container-pesquisa > label {
-    display: flex;
-}
-
-input#caixa-pesquisa {
+div#caixa-pesquisa > input {
+    width: 100%;
+    padding: 0 4px 0 40px;
     border: 1px solid whitesmoke;
     outline: none;
     background: none;
     border-radius: 5px;
     color: whitesmoke;
+    font-size: 1em;
 }
 
 img#icone-pesquisa {
+    margin-left: 1em;
+    padding: 6px;
     border: 1px solid whitesmoke;
     border-radius: 5px;
+    width: 24px;
+    cursor: pointer;
 }
