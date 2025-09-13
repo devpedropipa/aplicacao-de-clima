@@ -1,4 +1,17 @@
 div#previsao-tempo {
     text-align: center;
     color: whitesmoke;
+    margin: 2em;
+}
+
+img#icone-previsao {
+    width: 180px;
+}
+
+h1#temperatura {
+    font-size: 60px;
+}
+
+h2#local {
+    font-size: 32px;
 }
