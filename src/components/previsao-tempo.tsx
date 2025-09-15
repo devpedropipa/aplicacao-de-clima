@@ -1,4 +1,7 @@
+{/* Imagem */}
 import iconePrevisao from "../assets/icone-nuvem.png"
+
+{/* Estilo */}
 import "../styles/previsao-tempo.css"
 
 export function PrevisaoTempo() {

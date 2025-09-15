@@ -1,3 +1,4 @@
+{/* Estilo */}
 import "../styles/info-add.css"
 
 interface infoAddProps {
