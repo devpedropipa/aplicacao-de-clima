@@ -15,7 +15,22 @@ import iconeLocal from "../assets/icone-localizacao.png";
 }
 import "../styles/barra-pesquisa.css";
 
-export function BarraPesquisa() {
+
+export interface PropsClima {
+    iconeClima: string,
+    nome?: string,
+    temperatura?: number,
+    tempMax?: number,
+    tempMin?: number,
+    umidade?: number,
+    vento?: number,
+}
+
+interface PropsBarraPesquisa {
+    enviarDados: (dadosEnviados: PropsClima) => void,
+}
+
+export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
     const [valInpPesquisa, setValInpPesquisa] = useState("");
 
     {
@@ -34,7 +49,7 @@ export function BarraPesquisa() {
             return {
                 iconeClima: `https://openweathermap.org/img/wn/${dadosApi.weather[0].icon}.png`,
                 nome: valInpPesquisa,
-                temperatura: dadosApi.main.temp,
+                temperatura: Math.round(dadosApi.main.temp),
                 tempMin: dadosApi.main.temp_min,
                 tempMax: dadosApi.main.temp_max,
                 umidade: dadosApi.main.humidity,
@@ -50,8 +65,10 @@ export function BarraPesquisa() {
     }
     async function mostrarClima(e: FormEvent) {
         e.preventDefault();
-        const clima = await chamarApi();
-        console.log(clima)
+        const dadosClima = await chamarApi();
+        if (dadosClima) {
+            enviarDados(dadosClima)
+        }
     }
 
     return (

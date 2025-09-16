@@ -1,13 +1,13 @@
 {/* Estilo */}
 import "../styles/info-add.css"
 
-interface infoAddProps {
+interface PropsInfoAdd {
     numeroInfoAddClima: string;
     nomeInfoAddClima: string;
     iconeInfoAddClima: string;
 }
 
-export function InfoAdicional({numeroInfoAddClima, nomeInfoAddClima, iconeInfoAddClima}: infoAddProps) {
+export function InfoAdicional({numeroInfoAddClima, nomeInfoAddClima, iconeInfoAddClima}: PropsInfoAdd) {
     return (
         <div className="info-add">
             <img src={iconeInfoAddClima} alt="informação adicional" className="icone-info-add" draggable="false" />

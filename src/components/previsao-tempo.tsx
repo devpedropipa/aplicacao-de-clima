@@ -1,15 +1,18 @@
-{/* Imagem */}
-import iconePrevisao from "../assets/icone-nuvem.png"
-
 {/* Estilo */}
 import "../styles/previsao-tempo.css"
 
-export function PrevisaoTempo() {
+interface PropsPrevisao {
+    srcIconeClima: string,
+    valorTemp: string,
+    valorLocal: string,
+}
+
+export function PrevisaoTempo({ valorTemp, valorLocal, srcIconeClima}: PropsPrevisao) {
     return (
         <div id="previsao-tempo">
-            <img src={iconePrevisao} alt="icone de previsão do tempo" id="icone-previsao" draggable="false" />
-            <h1 id="temperatura">28°C</h1>
-            <h2 id="local">Chapecó</h2>
+            <img src={srcIconeClima} alt="icone de previsão do tempo" id="icone-previsao" draggable="false" />
+            <h1 id="temperatura">{valorTemp}</h1>
+            <h2 id="local">{valorLocal}</h2>
         </div>
     );
 }
