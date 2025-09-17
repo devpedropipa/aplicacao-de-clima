@@ -18,12 +18,12 @@ import "../styles/barra-pesquisa.css";
 
 export interface PropsClima {
     iconeClima: string,
-    nome?: string,
-    temperatura?: number,
-    tempMax?: number,
-    tempMin?: number,
-    umidade?: number,
-    vento?: number,
+    nome: string,
+    temperatura: number,
+    tempMax: number,
+    tempMin: number,
+    umidade: number,
+    vento: number,
 }
 
 interface PropsBarraPesquisa {
@@ -45,7 +45,7 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
         try {
             const response = await fetch(api);
             const dadosApi = await response.json();
-
+            
             return {
                 iconeClima: `https://openweathermap.org/img/wn/${dadosApi.weather[0].icon}.png`,
                 nome: valInpPesquisa,

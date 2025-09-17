@@ -21,48 +21,47 @@ import iconeNuvem from "../assets/icone-nuvem.png"
 }
 import "../styles/clima.css";
 
-export function Clima({
-    iconeClima = iconeNuvem,
-    nome = "Digite a sua localidade",
-    temperatura = Number(0),
-    tempMax = Number(0),
-    tempMin = Number(0),
-    umidade = Number(0),
-    vento = Number(0),
-}: PropsClima) {
-    const [clima, setClima] = useState<PropsClima | null>();
-    if (clima && clima.nome) {
-        iconeClima = clima.iconeClima
-        nome = clima.nome
-        temperatura = Number(clima.temperatura)
-        tempMax = Number(clima.tempMax)
-        tempMin = Number(clima.tempMin)
-        umidade = Number(clima.umidade)
-        vento = Number(clima.vento)
+export function Clima() {
+    const [dadosRecebidos, setDadosRecebidos] = useState<PropsClima>();
+    let clima = {
+        iconeClima: iconeNuvem,
+        nome: "Digite a sua localidade",
+        temperatura: 0,
+        tempMin: 0,
+        tempMax: 0,
+        umidade: 0,
+        vento: 0,
+    };
+    
+    if (dadosRecebidos) {
+        clima = dadosRecebidos;
+        console.log(clima);
+    } else {
+        console.log(clima)
     }
 
     return (
         <div id="clima">
-            <BarraPesquisa enviarDados={setClima} />
-            <PrevisaoTempo valorLocal={nome} valorTemp={`${String(temperatura)}°C`} srcIconeClima={iconeClima} />
+            <BarraPesquisa enviarDados={setDadosRecebidos} />
+            <PrevisaoTempo valorLocal={clima.nome} valorTemp={`${String(clima.temperatura)}°C`} srcIconeClima={clima.iconeClima} />
             <aside id="container-info-add">
                 <InfoAdicional
-                    numeroInfoAddClima={`${String(tempMin)}°C`}
+                    numeroInfoAddClima={`${clima.tempMin}°C`}
                     nomeInfoAddClima="Temp. mínima"
                     iconeInfoAddClima={iconeTempMin}
                 />
                 <InfoAdicional
-                    numeroInfoAddClima={`${String(tempMax)}°C`}
+                    numeroInfoAddClima={`${clima.tempMax}°C`}
                     nomeInfoAddClima="Temp. máxima"
                     iconeInfoAddClima={iconeTempMax}
                 />
                 <InfoAdicional
-                    numeroInfoAddClima={`${String(umidade)}%`}
+                    numeroInfoAddClima={`${clima.umidade}°C`}
                     nomeInfoAddClima="Umidade"
                     iconeInfoAddClima={iconeUmidade}
                 />
                 <InfoAdicional
-                    numeroInfoAddClima={`${String(vento)} KM/H`}
+                    numeroInfoAddClima={`${clima.vento} KM/H`}
                     nomeInfoAddClima="Vel. do vento"
                     iconeInfoAddClima={iconeVento}
                 />
