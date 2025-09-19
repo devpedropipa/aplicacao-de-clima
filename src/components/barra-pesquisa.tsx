@@ -43,7 +43,8 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
         /* Chama a api e pega os dados do clima daquela localidade */
     }
     async function chamarApi() {
-        const keyApi = "40ab9d36abc590d5b2357c091828ea10";
+        const keyApi = import.meta.env.VITE_API_KEY;
+        
         const api = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
             valInpPesquisa
         )}&appid=${keyApi}&lang=pt_br&units=metric`;
