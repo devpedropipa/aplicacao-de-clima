@@ -15,19 +15,25 @@ import iconeLocal from "../assets/icone-localizacao.png";
 }
 import "../styles/barra-pesquisa.css";
 
-
+{
+    /* Propriedade clima */
+}
 export interface PropsClima {
-    iconeClima: string,
-    nome: string,
-    temperatura: number,
-    tempMax: number,
-    tempMin: number,
-    umidade: number,
-    vento: number,
+    codClima: string;
+    iconeClima: string;
+    nome: string;
+    temperatura: number;
+    tempMax: number;
+    tempMin: number;
+    umidade: number;
+    vento: number;
 }
 
+{
+    /* Exporta a propriedade clima para outro arquivo */
+}
 interface PropsBarraPesquisa {
-    enviarDados: (dadosEnviados: PropsClima) => void,
+    enviarDados: (dadosEnviados: PropsClima) => void;
 }
 
 export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
@@ -45,9 +51,10 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
         try {
             const response = await fetch(api);
             const dadosApi = await response.json();
-            
+
             return {
-                iconeClima: `https://openweathermap.org/img/wn/${dadosApi.weather[0].icon}.png`,
+                codClima: dadosApi.weather[0].icon,
+                iconeClima: "",
                 nome: valInpPesquisa,
                 temperatura: Math.round(dadosApi.main.temp),
                 tempMin: dadosApi.main.temp_min,
@@ -67,7 +74,7 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
         e.preventDefault();
         const dadosClima = await chamarApi();
         if (dadosClima) {
-            enviarDados(dadosClima)
+            enviarDados(dadosClima);
         }
     }
 
