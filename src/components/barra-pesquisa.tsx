@@ -43,11 +43,21 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
     {
         /* Mostra o clima */
     }
-    async function mostrarClima(e: FormEvent) {
+    function verificarValInpPesquisa(e: FormEvent) {
         e.preventDefault();
+        if (!valInpPesquisa.trim()) {
+            window.alert("Digite a sua localidade.")
+        } else {
+            carregarDados();
+        }
+    }
+
+    async function carregarDados() {
         const dadosClima = await chamarApi();
         if (dadosClima) {
             enviarDados(dadosClima);
+        } else {
+            window.alert("Localidade não encontrada! Tente novamente.")
         }
     }
 
@@ -83,7 +93,7 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
 
     return (
         <div id="container-pesquisa">
-            <form id="barra-pesquisa" onSubmit={mostrarClima}>
+            <form id="barra-pesquisa" onSubmit={verificarValInpPesquisa}>
                 <div id="caixa-pesquisa">
                     <img
                         src={iconeLocal}
