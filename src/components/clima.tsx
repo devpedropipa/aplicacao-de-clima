@@ -43,6 +43,7 @@ export function Clima() {
     /* Valores iniciais */
     let clima = {
         codClima: "",
+        descricao: "",
         iconeClima: nuvemDispersa,
         nome: "Digite a sua localidade",
         temperatura: 0,
@@ -125,6 +126,7 @@ export function Clima() {
                 valorLocal={clima.nome}
                 valorTemp={`${clima.temperatura}°C`}
                 srcIconeClima={clima.iconeClima}
+                descricaoPrevisao={clima.descricao}
             />
             <aside id="container-info-add">
                 <InfoAdicional

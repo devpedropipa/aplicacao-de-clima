@@ -20,6 +20,7 @@ import "../styles/barra-pesquisa.css";
 }
 export interface PropsClima {
     codClima: string;
+    descricao: string;
     iconeClima: string;
     nome: string;
     temperatura: number;
@@ -66,6 +67,7 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
 
             return {
                 codClima: dadosApi.weather[0].icon,
+                descricao: dadosApi.weather[0].description,
                 iconeClima: "",
                 nome: valInpPesquisa,
                 temperatura: Math.round(dadosApi.main.temp),
