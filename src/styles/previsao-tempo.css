@@ -1,6 +1,6 @@
 div#previsao-tempo {
     text-align: center;
-    color: whitesmoke;
+    color: var(--corFonte);
     margin: 2em;
 }
 

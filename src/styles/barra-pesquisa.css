@@ -24,22 +24,30 @@ label#botao-pesquisar {
     display: flex;
 }
 
-div#caixa-pesquisa > input {
+input#input-pesquisa {
     width: 100%;
     padding: 0 4px 0 40px;
-    border: 1px solid whitesmoke;
+    border: 1px solid var(--bordaElemento);
     outline: none;
     background: none;
     border-radius: 5px;
-    color: whitesmoke;
+    color: var(--corFonte);
     font-size: 1em;
+}
+
+input#input-pesquisa:focus, input#input-pesquisa:hover {
+    background-color: rgb(128, 128, 128, 0.2);
 }
 
 img#icone-pesquisa {
     margin-left: 1em;
     padding: 6px;
-    border: 1px solid whitesmoke;
+    border: 1px solid var(--bordaElemento);
     border-radius: 5px;
     width: 24px;
     cursor: pointer;
+}
+
+img#icone-pesquisa:hover {
+    background-color: rgb(128, 128, 128, 0.2);
 }

@@ -40,6 +40,17 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
     const [valInpPesquisa, setValInpPesquisa] = useState("");
 
     {
+        /* Mostra o clima */
+    }
+    async function mostrarClima(e: FormEvent) {
+        e.preventDefault();
+        const dadosClima = await chamarApi();
+        if (dadosClima) {
+            enviarDados(dadosClima);
+        }
+    }
+
+    {
         /* Chama a api e pega os dados do clima daquela localidade */
     }
     async function chamarApi() {
@@ -68,17 +79,6 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
         }
     }
 
-    {
-        /* Mostra o clima */
-    }
-    async function mostrarClima(e: FormEvent) {
-        e.preventDefault();
-        const dadosClima = await chamarApi();
-        if (dadosClima) {
-            enviarDados(dadosClima);
-        }
-    }
-
     return (
         <div id="container-pesquisa">
             <form id="barra-pesquisa" onSubmit={mostrarClima}>
@@ -92,7 +92,7 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
                     <input
                         type="search"
                         id="input-pesquisa"
-                        required
+                        autoComplete="off"
                         onChange={(e) => {
                             setValInpPesquisa(e.target.value);
                         }}

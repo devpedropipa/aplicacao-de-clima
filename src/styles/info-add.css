@@ -2,10 +2,14 @@ div.info-add {
     display: flex;
     margin: 8px;
     align-items: center;
-    border: 1px solid whitesmoke;
+    border: 1px solid var(--bordaElemento);
     border-radius: 10px;
-    color: whitesmoke;
+    color: var(--corFonte);
     width: 200px;
+}
+
+div.info-add:hover {
+    background-color: rgba(128, 128, 128, 0.2);
 }
 
 img.icone-info-add {

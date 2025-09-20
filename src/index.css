@@ -24,3 +24,8 @@ main {
 img {
     user-select: none;
 }
+
+:root {
+    --bordaElemento: whitesmoke;
+    --corFonte: whitesmoke;
+}
