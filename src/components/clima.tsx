@@ -138,7 +138,7 @@ export function Clima() {
                     iconeInfoAddClima={iconeTempMax}
                 />
                 <InfoAdicional
-                    numeroInfoAddClima={`${clima.umidade}°C`}
+                    numeroInfoAddClima={`${clima.umidade}%`}
                     nomeInfoAddClima="Umidade"
                     iconeInfoAddClima={iconeUmidade}
                 />
