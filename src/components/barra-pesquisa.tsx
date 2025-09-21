@@ -57,7 +57,7 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
         if (dadosClima) {
             enviarDados(dadosClima);
         } else {
-            window.alert("Localidade não encontrada! Tente novamente.")
+            window.alert("Localidade incorreta! Tente novamente.")
         }
     }
 
@@ -105,6 +105,7 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
                         type="search"
                         id="input-pesquisa"
                         autoComplete="off"
+                        placeholder="Ex: Lisboa"
                         onChange={(e) => {
                             setValInpPesquisa(e.target.value);
                         }}
