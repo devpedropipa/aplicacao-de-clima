@@ -1,0 +1,119 @@
+@media (max-width: 500px) {
+    div#previsao-tempo > h2#local {
+        font-size: 26px;
+    }
+
+    div#previsao-tempo > h1#temperatura {
+        font-size: 50px;
+    }
+}
+
+/* Celulares */
+
+@media (max-width: 428px) {
+    div#clima > div#previsao-tempo {
+        margin: 10px;
+    }
+
+    div#previsao-tempo > h1#temperatura {
+        font-size: 36px;
+    }
+
+    abbr > img#icone-previsao {
+        width: 160px;
+    }
+
+    div.info-add > img.icone-info-add {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ------------ */
+
+@media (max-width: 390px) {
+    abbr > img#icone-previsao {
+        width: 130px;
+    }
+
+    div#previsao-tempo > h1#temperatura {
+        font-size: 30px;
+    }
+
+    div#previsao-tempo > h2#local {
+        font-size: 21px;
+    }
+}
+
+/* ------------ */
+
+@media (max-width: 375px) {
+    div#caixa-pesquisa > img#icone-local {
+        width: 24px;
+    }
+
+    div#caixa-pesquisa > input#input-pesquisa {
+        font-size: 14px;
+    }
+
+    label#botao-pesquisar > img#icone-pesquisa {
+        width: 20px;
+    }
+
+    div.dados-info-add > p.numero-info-add {
+        font-size: 16px;
+    }
+
+    div.dados-info-add > p.nome-info-add {
+        font-size: 14px;
+    }
+}
+
+/* ------------ */
+
+@media (max-width: 320px) {
+    main#conteudo > div#clima {
+        padding: 10px;
+    }
+
+    div#clima > div#previsao-tempo {
+        margin: 4px;
+    }
+
+    aside#container-info-add > div.info-add {
+        margin: 4px;
+    }
+
+    div.info-add > div.dados-info-add {
+        margin: 4px;
+    }
+
+    abbr > img#icone-previsao {
+        width: 90px;
+    }
+
+    div#previsao-tempo > h1#temperatura {
+        font-size: 20px;
+    }
+
+    div#previsao-tempo > h2#local {
+        font-size: 16px;
+    }
+
+    div.dados-info-add > p.numero-info-add {
+        font-size: 12px;
+    }
+
+    label#botao-pesquisar > img#icone-pesquisa {
+        width: 15px;
+    }
+
+    div#caixa-pesquisa > img#icone-local {
+        width: 19px;
+    }
+
+    div#caixa-pesquisa > input#input-pesquisa {
+        font-size: 12px;
+        padding-left: 30px;
+    }
+}
