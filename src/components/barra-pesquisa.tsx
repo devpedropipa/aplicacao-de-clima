@@ -45,7 +45,7 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
     }
     function verificarValInpPesquisa(e: FormEvent) {
         e.preventDefault();
-        if (!valInpPesquisa.trim()) {
+        if (!valInpPesquisa) {
             window.alert("Digite a sua localidade.");
         } else {
             carregarDados();
@@ -127,7 +127,7 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
                         autoComplete="off"
                         placeholder="Ex: Lisboa"
                         onChange={(e) => {
-                            setValInpPesquisa(e.target.value);
+                            setValInpPesquisa(e.target.value.trim());
                         }}
                     />
                 </div>
