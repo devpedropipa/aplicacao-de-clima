@@ -46,7 +46,7 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
     function verificarValInpPesquisa(e: FormEvent) {
         e.preventDefault();
         if (!valInpPesquisa.trim()) {
-            window.alert("Digite a sua localidade.")
+            window.alert("Digite a sua localidade.");
         } else {
             carregarDados();
         }
@@ -57,7 +57,7 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
         if (dadosClima) {
             enviarDados(dadosClima);
         } else {
-            window.alert("Localidade incorreta! Tente novamente.")
+            window.alert("Localidade incorreta! Tente novamente.");
         }
     }
 
@@ -66,26 +66,46 @@ export function BarraPesquisa({ enviarDados }: PropsBarraPesquisa) {
     }
     async function chamarApi() {
         const keyApi = import.meta.env.VITE_API_KEY;
-        
+
         const api = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
             valInpPesquisa
         )}&appid=${keyApi}&lang=pt_br&units=metric`;
 
         try {
-            const response = await fetch(api);
-            const dadosApi = await response.json();
+            const response = await fetch(api); /* Faz a chamada da api */
+            const dadosApi = await response.json(); /* Pega os dados da api */
+            const quantMaxCaracteres = 20; /* Quantidade máxima de caracteres */
 
-            return {
-                codClima: dadosApi.weather[0].icon,
-                descricao: dadosApi.weather[0].description,
-                iconeClima: "",
-                nome: valInpPesquisa,
-                temperatura: Math.round(dadosApi.main.temp),
-                tempMin: dadosApi.main.temp_min,
-                tempMax: dadosApi.main.temp_max,
-                umidade: dadosApi.main.humidity,
-                vento: dadosApi.wind.speed,
-            };
+            if (valInpPesquisa.length > quantMaxCaracteres) {
+                const valorCortado = `${valInpPesquisa.slice(
+                    0,
+                    quantMaxCaracteres
+                )}...`;
+
+                return {
+                    codClima: dadosApi.weather[0].icon,
+                    descricao: dadosApi.weather[0].description,
+                    iconeClima: "",
+                    nome: valorCortado,
+                    temperatura: Math.round(dadosApi.main.temp),
+                    tempMin: dadosApi.main.temp_min,
+                    tempMax: dadosApi.main.temp_max,
+                    umidade: dadosApi.main.humidity,
+                    vento: dadosApi.wind.speed,
+                };
+            } else {
+                return {
+                    codClima: dadosApi.weather[0].icon,
+                    descricao: dadosApi.weather[0].description,
+                    iconeClima: "",
+                    nome: valInpPesquisa,
+                    temperatura: Math.round(dadosApi.main.temp),
+                    tempMin: dadosApi.main.temp_min,
+                    tempMax: dadosApi.main.temp_max,
+                    umidade: dadosApi.main.humidity,
+                    vento: dadosApi.wind.speed,
+                };
+            }
         } catch (error) {
             console.log(error);
         }
